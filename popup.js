@@ -98,17 +98,43 @@ function removeItem(div) {
 
 //displays the blacklist onto popup.html
 function writeList(){
-  chrome.storage.sync.get({userID}, function(temp) {
+  chrome.storage.sync.get(['userID'], function(temp) {
     var id = temp.userID;
     var pl = document.getElementById("userID").placeholder = id;
+  });
+  chrome.storage.sync.get(['isPaused'], function(temp) {
+    var paused = temp.isPaused;
+    var pauseLabel = document.getElementById("lbPause");
+    var pauseCheckbox = document.getElementById("cbPause");
+    if(paused){
+      pauseLabel.innerHTML = "Paused";
+      pauseCheckbox.checked = false;
 
-  })
+    } else {
+      pauseLabel.innerHTML = "Running";
+      pauseCheckbox.checked = true;
+    }
+  });
   chrome.storage.sync.get({blacklist: []}, function(temp) {
     var bl = temp.blacklist.sort();
     for (var i = 0; i < bl.length; i++) {
       newElement(bl[i]);
     }
-  })
+  });
+}
+
+function pauseExtension(){
+  chrome.storage.sync.get(['isPaused'], function(temp) {
+    var paused = !temp.isPaused;
+    chrome.storage.sync.set({isPaused: paused});
+    var pauseLabel = document.getElementById("lbPause");
+    if(paused){
+      pauseLabel.innerHTML = "Paused";
+    } else {
+      pauseLabel.innerHTML = "Running";
+    }
+  });
+
 }
 
 
@@ -124,6 +150,7 @@ if (blacklist2 === null)
 window.addEventListener('DOMContentLoaded', (event) => {
   document.querySelector('#btSubmit').addEventListener('click', setUserID);
   document.querySelector('#btAdd').addEventListener('click', addElement);
+  document.querySelector('#cbPause').addEventListener('change', pauseExtension);
   writeList();
 });
 

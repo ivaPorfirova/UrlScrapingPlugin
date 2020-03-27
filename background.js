@@ -1,9 +1,12 @@
 var myID = "";
+var p = false;
 
 chrome.storage.sync.set({blacklist: []}, function(){
-})
+});
 chrome.storage.sync.set({userID: myID}, function(){
-})
+});
+chrome.storage.sync.set({isPaused: p}, function(){
+});
 
 
 chrome.runtime.onInstalled.addListener(function() {
@@ -60,16 +63,32 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     // don't do anything if url hasn't changed
     if (!changeInfo.url) return;
+    chrome.storage.sync.get(['isPaused'], function(temp){
+      var pause = temp.isPaused;
+      if(!pause){
+        uploadToS3(changeInfo.url);
+        console.log("Uploaded");
+      } else {
+        return;
+      }
+    });
 
-    uploadToS3(changeInfo.url);
   });
 
   chrome.tabs.onActivated.addListener(function(activeInfo) {
     chrome.tabs.get(activeInfo.tabId, function(tab) {
       if (!tab.url || tab.url.includes("chrome://")) return;
-
+      chrome.storage.sync.get(['isPaused'], function(temp){
+        var pause = temp.isPaused;
+        if(!pause){
+          uploadToS3(tab.url);
+          console.log("Uploaded");
+        } else {
+          return;
+        }
+      });
       // uncomment line below if you want the code to run when user simply switches/activates tabs
-      uploadToS3(tab.url);
+
     });
   });
 });
