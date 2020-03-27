@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <script src="popup.js" defer></script>
+  </head>
+  <body>
+
+
+    <!-- User ID Input Field -->
+    <form>
+      <div>
+          <label for="userID">User ID</label>
+          <input type="text" id="userID" required=""  maxlength="20">
+      </div>
+      <!-- <div>
+          <label for="accessKey">Access Key</label>
+          <input type="text" required="" id="accessKey" placeholder="Access Key">
+      </div>
+      <div>
+          <label for="secretAccessKey">Secret Access Key</label>
+          <input type="text" required="" id="secretAccessKey" placeholder="Secret Access Key">
+      </div> -->
+      <div class="" id="bucketFooter">
+          <button type="submit" id="btSubmit">Submit</button>
+      </div>
+    </form>
+
+    <!-- Blacklist Input and Display Field -->
+    <div id="blacklist">
+      <div id="addWebsite" class="header">
+        <h3>Enter Website Name: </h3>
+        <input type="text" id="userInput" placeholder="www.WebsiteName.com">
+        <button id="btAdd" class="btAdd">Add to Blacklist</button>
+      </div>
+
+      <h3> Current Blacklist </h3>
+      <ul id="currBlacklist">
+        <li>www.example.com</li>
+      </ul>
+    </div>
+
+  </body>
+</html>
