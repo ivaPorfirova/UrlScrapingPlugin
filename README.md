@@ -2,7 +2,7 @@
 
 2020 Presidential Election Research Project.
 
-This is a url scraping browser extension with an integrated s3 pipeline. This research data collection tool is created by [Iva Porfirova](https://github.com/ivaPorfirova), [Riya Mokashi](https://github.com/RiyaMokashi), and [Ledion Lecaj](https://github.com/LedionLecaj). :computer: :surf:
+This is a url scraping browser extension with an integrated s3 pipeline. This research data collection tool is created by [Iva Porfirova](https://github.com/ivaPorfirova), [Riya Mokashi](https://github.com/RiyaMokashi), and [Ledion Lecaj](https://github.com/LedionLecaj). :computer:
 
 ## Quick Start
 
