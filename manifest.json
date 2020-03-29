@@ -21,19 +21,9 @@
     "persistent": false
   },
   "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "images/torch-16.png",
-      "32": "images/torch-32.png",
-      "48": "images/torch-48.png",
-      "128": "images/torch-128.png"
-    },
-    "icons": {
-      "16": "images/torch-16.png",
-      "32": "images/torch-32.png",
-      "48": "images/torch-48.png",
-      "128": "images/torch-128.png"
-    }
+    "default_popup": "popup.html"
+
+
   },
   "manifest_version": 2
 }

@@ -111,7 +111,7 @@ function writeList(){
       pauseCheckbox.checked = false;
 
     } else {
-      pauseLabel.innerHTML = "Running";
+      pauseLabel.innerHTML = "Active";
       pauseCheckbox.checked = true;
     }
   });
@@ -131,20 +131,17 @@ function pauseExtension(){
     if(paused){
       pauseLabel.innerHTML = "Paused";
     } else {
-      pauseLabel.innerHTML = "Running";
+      pauseLabel.innerHTML = "Active";
     }
   });
 
 }
-
-
 
 var blacklist2 = document.getElementsByTagName("LI");
 if (blacklist2 === null)
 {
   //deal with null case later
 }
-
 
 //link buttons to appropriate functions once website is loaded
 window.addEventListener('DOMContentLoaded', (event) => {
