@@ -55,7 +55,9 @@ function newElement(myStr) {
   document.getElementById("currBlacklist").appendChild(li);
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
+  //var txt = document.createTextNode("-");
   span.className = "remove";
+  txt.className = "rmText";
   span.appendChild(txt);
   li.appendChild(span);
   for (var i = 0; i < remove.length; i++) {
@@ -134,14 +136,10 @@ function pauseExtension(){
       pauseLabel.innerHTML = "Active";
     }
   });
-
 }
 
-var blacklist2 = document.getElementsByTagName("LI");
-if (blacklist2 === null)
-{
-  //deal with null case later
-}
+
+
 
 //link buttons to appropriate functions once website is loaded
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -150,12 +148,3 @@ window.addEventListener('DOMContentLoaded', (event) => {
   document.querySelector('#cbPause').addEventListener('change', pauseExtension);
   writeList();
 });
-
-
-//for listening any message which comes from runtime
-// function hello() {
-//   chrome.storage.sync.set({id:document.getElementById('UserID')})
-//   console.log(document.getElementById('UserID'))
-// }
-//
-// document.getElementById('save').addEventListener('submit', hello);
