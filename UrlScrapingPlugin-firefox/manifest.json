@@ -1,0 +1,32 @@
+// FUN READS:
+//   * https://www.zscaler.com/blogs/research/malicious-chrome-extension-steals-cookies-and-credentials-bank-customers (good example of malicious extension)
+//   * https://levelup.gitconnected.com/how-to-use-background-script-to-fetch-data-in-chrome-extension-ef9d7f69625d (persistence, alarms)
+{
+  "name": "Demo Run - Plugin",
+  "version": "2.0",
+  "description": "A quick demo run of the presidential plugin",
+  // needed so we can load jQuery from Google's CDN
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "declarativeContent",
+    "storage",
+    // needed to be able to make cross-origin API requests
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "scripts": ["aws-sdk.min.js","background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "presidential-2020-url-scraper@mozilla.org"
+    }
+  }
+}

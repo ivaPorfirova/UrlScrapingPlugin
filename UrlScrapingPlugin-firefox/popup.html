@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="popup.js" defer></script>
+
+  </head>
+  <body>
+    <div id="container"> </div>
+    <div class="wrapper">
+      <div class="a">
+        <label for="pauseSwitch" id="lbPause"></label>
+        <label class="switch" id="pauseSwitch">
+          <input type="checkbox" id="cbPause">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <!-- User ID Input Field -->
+      <div class="b">
+        <form>
+          <div>
+              <label for="userID">User ID</label>
+              <input type="text" id="userID" placeholder="User ID" required="" maxlength="20">
+          </div>
+          <div class="" id="bucketFooter">
+              <button type="submit" id="btSubmit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+    <!-- Blacklist Input and Display Field -->
+    <div id="blacklist" class="c">
+      <div id="addWebsite" class="header">
+        <h4> Optional Blacklist </h4>
+        <label for="add to blacklist">Enter a Website </laber>
+        <input type="text" id="userInput" placeholder="www.WebsiteName.com">
+        <button id="btAdd" class="btAdd">Add to Blacklist</button>
+      </div>
+    </div>
+
+    <div class="d">
+      <label for="current blacklist"> Current Blacklist </label>
+      <ul id="currBlacklist">
+        <li>www.example.com</li>
+      </ul>
+    </div>
+
+    <div class="e">
+      <h3 class="img-title"> plugin <span style="color:#57068c" &nbsp > for Chrome <span> </h3>
+    </div>
+
+    <figure>
+      <img src="cSMaP.png" height="35px" width="auto">
+    </figure>
+
+  </body>
+</html>
