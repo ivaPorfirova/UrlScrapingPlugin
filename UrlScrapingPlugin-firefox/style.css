@@ -164,6 +164,7 @@
  }
 
   body {
+    width: 350px;
     background-color: snow;
     opacity: 0.9;
     text-overflow: ellipsis;
@@ -175,7 +176,7 @@
   }
 
   h3, h4 {
-    margin-top: 0;
+    margin-top: 5px;
   }
 
   ul {
@@ -183,17 +184,17 @@
     list-style-type: none;
   }
   li {
-    margin-left: 0%;
+    margin-left: -35%;
   }
 
   h3.img-title {
     position: absolute;
-    left: 18%;
+    left: 12%;
   }
 
   figure {
     position: absolute;
-    left: 0;
+    left: -18px;
   }
 
   .remove {

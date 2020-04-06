@@ -188,12 +188,12 @@
 
   h3.img-title {
     position: absolute;
-    left: 18%;
+    left: 12%;
   }
 
   figure {
     position: absolute;
-    left: 0;
+    left: -23px;
   }
 
   .remove {
