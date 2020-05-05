@@ -15,3 +15,7 @@ If you just want to run the extension locally to see the user interface and s3 p
 * In Chrome, go to chrome://extensions, turn on Developer Mode, and choose Load Unpacked extension, and select the folder where you cloned or downloaded this repository. 
 
 * In Firefox navigate to the root directory of the downloaded repository. In a node.js terminal run npm install --global web-ext. Once that has downloaded, run web-ext run in the root directory of the extension. This will open the extension in developer mode in Firefox.
+
+<img src="images/chromePlugin.png" width="200">
+
+
